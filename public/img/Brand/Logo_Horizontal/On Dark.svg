@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="60px" viewBox="0 0 200 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Brand/Logo_Horizontal/On Dark</title>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Background/Dark" transform="translate(-88.000000, -304.000000)">
+            <g id="Brand/Logo_Horizontal/On-Dark" transform="translate(88.000000, 304.000000)">
+                <rect id="Rectangle" fill="#1C1917" x="0" y="0" width="200" height="60"></rect>
+                <g id="Symbol" transform="translate(5.000000, 14.000000)">
+                    <ellipse id="Oval" fill="#FBBF24" cx="33.5454545" cy="16" rx="15.9962121" ry="16"></ellipse>
+                    <ellipse id="Oval-Copy" fill="#4F46E5" cx="15.9962121" cy="16" rx="15.9962121" ry="16"></ellipse>
+                    <path d="M24.7708333,29.3592233 C20.4207847,26.5025622 17.5492424,21.5860024 17.5492424,15.9999997 C17.5492424,10.4139971 20.4207847,5.49743721 24.7708333,2.6407767 C29.1208816,5.49743655 31.9924242,10.4139967 31.9924242,15.9999997 C31.9924242,21.5860027 29.1208816,26.5025629 24.7708325,29.3592233 L24.7708333,29.3592233 Z" id="Path" fill="#1C049A"></path>
+                </g>
+                <text id="KLEMMER" font-family="Montserrat-ExtraBold, Montserrat" font-size="20" font-weight="700" line-spacing="29" letter-spacing="4.4" fill="#F0F9FF">
+                    <tspan x="58.56" y="35">KLEMMER</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
