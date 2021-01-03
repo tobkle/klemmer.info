@@ -3,7 +3,7 @@
     "name": "Klemmer.info",
     "lang": "en",
     "description": "Klemmer.info Blog",
-    "start_url": "http://localhost:3000",
+    "start_url": "https://klemmer.info",
     "background_color": "#4f46e5",
     "theme_color": "#fbbf24",
     "dir": "ltr",
