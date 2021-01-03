@@ -18,6 +18,8 @@ export default function MyApp({ Component, pageProps }) {
                 <link rel="manifest" href="/manifest.json" />
 
                 <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+
+                <meta name="robots" content="all" />
                 <meta name="theme-color" content="#4F46E5" />
 
                 <meta name="application-name" content="klemmer.info" />
