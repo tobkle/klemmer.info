@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }) {
                     name="viewport"
                     content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
                 />
-
+                <link rel="canonical" href="https://klemmer.info" />
                 <meta name="description" content="Blog von Tobias Klemmer" />
                 <meta name="keywords" content="Blog, Tech, Learn" />
                 <title>klemmer.info</title>
