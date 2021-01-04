@@ -23,21 +23,21 @@ const Home = (props) => (
 
                 <section className="hero">
                     <a href="https://nextjs.org/learn/basics/getting-started">
-                        <h3>Getting Started &rarr;</h3>
+                        <h2>Getting Started &rarr;</h2>
                         <p>Learn more about Next</p>
                     </a>
                     <a href="https://nextjs.org/docs/advanced-features/amp-support/introduction">
-                        <h3>AMP Support in Next.js &rarr;</h3>
+                        <h2>AMP Support in Next.js &rarr;</h2>
                         <p>Learn how to build AMP sites with Next.js</p>
                     </a>
                     <a href="https://amp.dev/documentation/components/?format=websites">
-                        <h3>AMP Components &rarr;</h3>
+                        <h2>AMP Components &rarr;</h2>
                         <p>See which components are available.</p>
                     </a>
                 </section>
 
                 <section>
-                    <h3>Using AMP Components</h3>
+                    <h2>Using AMP Components</h2>
                     <p>
                         You can import AMP components using{" "}
                         <code>next/head</code>. Checkout{" "}
@@ -71,7 +71,7 @@ const Home = (props) => (
                 </section>
 
                 <section>
-                    <h3>amp-bind & amp-state</h3>
+                    <h2>amp-bind & amp-state</h2>
                     <p>
                         It's no problem to use <code>amp-bind</code> and{" "}
                         <code>amp-state</code> with Next.js. There are two
@@ -124,7 +124,7 @@ const Home = (props) => (
                 </section>
 
                 <section>
-                    <h3>amp-list & amp-mustache</h3>
+                    <h2>amp-list & amp-mustache</h2>
                     <p>
                         Mustache templates conflict with JSX and it's template
                         literals need to be escaped. A simple approach is to
@@ -154,7 +154,7 @@ const Home = (props) => (
                 </section>
 
                 <section>
-                    <h3>amp-script</h3>
+                    <h2>amp-script</h2>
                     <p>
                         Checkout the{" "}
                         <a href="https://amp.dev/documentation/components/amp-script/">
@@ -199,6 +199,7 @@ const Home = (props) => (
                 </section>
             </main>
         </Layout>
+
         <style jsx>{`
             code,
             pre {

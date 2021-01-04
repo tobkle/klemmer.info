@@ -16,6 +16,7 @@ const Layout = (props) => (
             <title>{props.title || ""}</title>
             <meta name="description" content={props.description || ""} />
             <link rel="canonical" href="https://klemmer.info" />
+            <meta name="robots" content="all" />
             <meta name="theme-color" content={THEME_COLOR} />
             <link
                 rel="icon"
