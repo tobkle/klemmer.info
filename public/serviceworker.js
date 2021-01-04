@@ -15,7 +15,9 @@ importScripts("https://cdn.ampproject.org/sw/amp-sw.js")
 AMP_SW.init({
     assetCachingOptions: [
         {
-            regexp: /\.(png|jpg|woff2|woff|css|js)/,
+            // regexp: /\.(png|jpg|woff2|woff|css|js)/,
+            // TODO: during development exclude js and css otherwise don't see my results
+            regexp: /\.(png|jpg|woff2|woff)/,
             cachingStrategy: "CACHE_FIRST", // options are NETWORK_FIRST | CACHE_FIRST | STALE_WHILE_REVALIDATE
         },
     ],
