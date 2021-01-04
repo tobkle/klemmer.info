@@ -1,10 +1,10 @@
-import Layout from "../components/Layout"
-import AmpState from "../components/amp/AmpState"
-import AmpScript from "../components/amp/AmpScript"
+import Layout from "components/Layout"
+import AmpState from "components/amp/AmpState"
+import AmpScript from "components/amp/AmpScript"
 import {
     AmpIncludeAmpList,
     AmpIncludeAmpCarousel,
-} from "../components/amp/AmpCustomElement"
+} from "components/amp/AmpCustomElement"
 
 export const config = { amp: true }
 

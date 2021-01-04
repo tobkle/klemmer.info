@@ -1,9 +1,7 @@
-import PropTypes from "prop-types"
 import NextHead from "next/head"
+import PropTypes from "prop-types"
 import { AmpIncludeAmpInstallServiceworker } from "./amp/AmpCustomElement"
-
-// Your app's theme color
-const THEME_COLOR = "#4F46E5"
+import config from "config"
 
 /**
  * A sample page layout installing the AMP Serviceworker by default.
@@ -13,107 +11,130 @@ const THEME_COLOR = "#4F46E5"
 const Layout = (props) => (
     <>
         <NextHead>
-            <title>{props.title || ""}</title>
-            <meta name="description" content={props.description || ""} />
-            <link rel="canonical" href="https://klemmer.info" />
-            <meta name="robots" content="all" />
-            <meta name="theme-color" content={THEME_COLOR} />
-            <link
-                rel="icon"
-                sizes="192x192"
-                href="/static/images/icons-192.png"
-            />
-            <link rel="apple-touch-icon" href="/static/images/icons-192.png" />
-            <link rel="icon" href="/static/favicon.ico" />
-            <link rel="manifest" href="/manifest.json" />
-
-            {/** before START */}
-            {/*
             <meta charSet="utf-8" />
+
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta
+
+            {/* <meta
                 name="viewport"
-                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
+                content="width=device-width,initial-scale=1,minimum-scale=1"
+            /> */}
+
+            <title>
+                {props.title
+                    ? props.title + " | " + config.siteName
+                    : config.siteName}
+            </title>
+
+            <meta
+                name="description"
+                content={props.description || config.description}
             />
-            <link rel="canonical" href="https://klemmer.info" />
-            <meta name="description" content="Blog von Tobias Klemmer" />
-            <meta name="keywords" content="Blog, Tech, Learn" />
-            <title>klemmer.info</title>
 
-            <link rel="manifest" href="/manifest.json" />
+            <meta name="keywords" content={config.keywords} />
 
-            <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+            <meta name="robots" content={config.robots} />
 
-            <meta name="robots" content="all" />
-            <meta name="theme-color" content="#4F46E5" />
+            <meta name="theme-color" content={config.themeColor} />
 
-            <meta name="application-name" content="klemmer.info" />
+            <meta name="application-name" content={config.applicationName} />
+
             <meta name="apple-mobile-web-app-capable" content="yes" />
+
             <meta
                 name="apple-mobile-web-app-status-bar-style"
                 content="default"
             />
-            <meta name="apple-mobile-web-app-title" content="klemmer.info" />
-            <meta name="description" content="Blog Tobias Klemmer" />
+
+            <meta
+                name="apple-mobile-web-app-title"
+                content={config.applicationName}
+            />
+
             <meta name="format-detection" content="telephone=no" />
+
             <meta name="mobile-web-app-capable" content="yes" />
+
             <meta
                 name="msapplication-config"
-                content="/icons/browserconfig.xml"
+                content="/static/icons/browserconfig.xml"
             />
-            <meta name="msapplication-TileColor" content="#4F46E5" />
+
+            <meta name="msapplication-TileColor" content={config.themeColor} />
+
             <meta name="msapplication-tap-highlight" content="no" />
+
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:url" content={config.siteUrl} />
+            <meta name="twitter:title" content={config.siteName} />
+            <meta name="twitter:description" content={config.description} />
+            <meta name="twitter:creator" content={config.twitterCreator} />
+            <meta
+                name="twitter:image"
+                content={`${config.siteUrl}/static/icons/icon-192x192.png`}
+            />
+
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content={config.siteName} />
+            <meta property="og:description" content={config.description} />
+            <meta property="og:site_name" content={config.applicationName} />
+            <meta property="og:url" content={config.siteUrl} />
+            <meta
+                property="og:image"
+                content={`${config.siteUrl}/static/icons/icon-512x512.png`}
+            />
+
+            <link rel="canonical" href={config.siteUrl} />
+
+            <link
+                rel="icon"
+                sizes="192x192"
+                href="/static/icons/icon-192x192.png"
+            />
+
+            <link
+                rel="apple-touch-icon"
+                href="/static/icons/icon-192x192.png"
+            />
+
+            <link rel="icon" href="/static/favicon.ico" />
+
+            <link rel="shortcut icon" href="/static/favicon.ico" />
 
             <link
                 rel="apple-touch-icon"
                 sizes="180x180"
-                href="/icons/apple-icon-180x180.jpg"
+                href="/static/icons/icon-180x180.png"
             />
+
             <link
                 rel="icon"
                 type="image/png"
                 sizes="96x96"
-                href="/icons/favicon-96x96.jpg"
+                href="/static/icons/icon-96x96.png"
             />
+
             <link
                 rel="icon"
                 type="image/png"
                 sizes="32x32"
-                href="/icons/favicon-32x32.jpg"
+                href="/static/icons/icon-32x32.png"
             />
+
             <link
                 rel="icon"
                 type="image/png"
                 sizes="16x16"
-                href="/icons/favicon-16x16.jpg"
+                href="/static/icons/icon-16x16.png"
             />
+
             <link
                 rel="mask-icon"
-                href="/icons/safari-pinned-tab.svg"
+                href="/static/icons/safari-pinned-tab.svg"
                 color="#4F46E5"
             />
-            <link rel="shortcut icon" href="/favicon.ico" />
 
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:url" content="https://klemmer.info" />
-            <meta name="twitter:title" content="klemmer.info" />
-            <meta name="twitter:description" content="Blog Tobias Klemmer" />
-            <meta
-                name="twitter:image"
-                content="https://klemmer.info/icons/android-icon-192x192.jpg"
-            />
-            <meta name="twitter:creator" content="@tobiasklemmer" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="klemmer.info" />
-            <meta property="og:description" content="Blog Tobias Klemmer" />
-            <meta property="og:site_name" content="klemmer.info" />
-            <meta property="og:url" content="https://klemmer.info" />
-            <meta
-                property="og:image"
-                content="https://klemmer.info/icons/apple-touch-icon.jpg"
-            />
-            */}
-            {/** before END */}
+            <link rel="manifest" href="/manifest.json" />
         </NextHead>
 
         {props.children}
