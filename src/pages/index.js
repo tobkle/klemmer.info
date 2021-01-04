@@ -1,129 +1,265 @@
-import Head from "next/head"
-import { useAmp } from "next/amp"
+import Layout from "../components/Layout"
+import AmpState from "../components/amp/AmpState"
+import AmpScript from "../components/amp/AmpScript"
+import {
+    AmpIncludeAmpList,
+    AmpIncludeAmpCarousel,
+} from "../components/amp/AmpCustomElement"
 
-export const config = {
-    amp: true,
-}
+export const config = { amp: true }
 
-export default function IndexPage() {
-    const isAmp = useAmp()
-    return (
-        <>
-            <Head>
-                <title>AMP Story</title>
-                <script
-                    async
-                    key="amp-story"
-                    custom-element="amp-story"
-                    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
-                />
-                <script
-                    async
-                    key="amp-video"
-                    custom-element="amp-video"
-                    src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
-                />
-            </Head>
+const Home = (props) => (
+    <>
+        <Layout
+            title="Welcome to AMP"
+            description="Learn how to build an AMP First with Next.js."
+        >
+            <main>
+                <h1 className="title">Welcome to AMP ⚡</h1>
+                <p className="description">
+                    To get started, edit <code>pages/index.js</code> and save to
+                    reload.
+                </p>
 
-            <amp-story
-                standalone=""
-                title="Stories in AMP - Hello World"
-                publisher="AMP Project"
-                publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
-                poster-portrait-src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg"
-                poster-square-src="https://amp.dev/static/samples/img/story_dog2_square.jpg"
-                poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg"
-            >
-                {/* <!-- A story consists of one or more pages. Each page is declared by an `amp-story-page` element. Pages are designed by layering videos, images and text. Here we have a page that uses two layers. One layer filling the available space with an image and one text layer that shows a heading. --> */}
-                <amp-story-page id="page-1">
-                    <amp-story-grid-layer template="fill">
+                <section className="hero">
+                    <a href="https://nextjs.org/learn/basics/getting-started">
+                        <h3>Getting Started &rarr;</h3>
+                        <p>Learn more about Next</p>
+                    </a>
+                    <a href="https://nextjs.org/docs/advanced-features/amp-support/introduction">
+                        <h3>AMP Support in Next.js &rarr;</h3>
+                        <p>Learn how to build AMP sites with Next.js</p>
+                    </a>
+                    <a href="https://amp.dev/documentation/components/?format=websites">
+                        <h3>AMP Components &rarr;</h3>
+                        <p>See which components are available.</p>
+                    </a>
+                </section>
+
+                <section>
+                    <h3>Using AMP Components</h3>
+                    <p>
+                        You can import AMP components using{" "}
+                        <code>next/head</code>. Checkout{" "}
+                        <code>components/amp/AmpCustomElement</code> for a
+                        simple way to import AMP components. Once the component
+                        is imported, you can use it like any other HTML element.
+                    </p>
+                    <AmpIncludeAmpCarousel />
+                    <amp-carousel
+                        type="slides"
+                        width="800"
+                        height="300"
+                        layout="responsive"
+                    >
                         <amp-img
-                            src="https://amp.dev/static/samples/img/story_dog2.jpg"
-                            width="720"
-                            height="1280"
-                            layout="responsive"
+                            src="https://unsplash.it/800/300?id=123"
+                            layout="fill"
+                            alt="demo image"
                         />
-                    </amp-story-grid-layer>
-                    <amp-story-grid-layer template="vertical">
-                        <h1>Hello World</h1>
-                        <p>This is an AMP Story.</p>
-                    </amp-story-grid-layer>
-                </amp-story-page>
+                        <amp-img
+                            src="https://unsplash.it/800/300?id=124"
+                            layout="fill"
+                            alt="demo image"
+                        />
+                        <amp-img
+                            src="https://unsplash.it/800/300?id=125"
+                            layout="fill"
+                            alt="demo image"
+                        />
+                    </amp-carousel>
+                </section>
 
-                {/* <!-- Here we have a page consisting of a video which autoplays and loops. --> */}
-                <amp-story-page id="page-2">
-                    <amp-story-grid-layer template="fill">
-                        <amp-video
-                            autoplay=""
-                            loop=""
-                            width="720"
-                            height="960"
-                            poster="https://amp.dev/static/samples/img/story_video_dog_cover.jpg"
-                            layout="responsive"
-                        >
-                            <source
-                                src="https://amp.dev/static/samples/video/story_video_dog.mp4"
-                                type="video/mp4"
+                <section>
+                    <h3>amp-bind & amp-state</h3>
+                    <p>
+                        It's no problem to use <code>amp-bind</code> and{" "}
+                        <code>amp-state</code> with Next.js. There are two
+                        things to be aware of:
+                        <ol>
+                            <li>
+                                The <code>[...]</code> binding syntax{" "}
+                                <code>[text]="myStateVariable"</code>is not
+                                supported in JSX. Use{" "}
+                                <code>
+                                    data-amp-bind-text="myStateVariable"
+                                </code>{" "}
+                                instead.
+                            </li>
+                            <li>
+                                Initializing <code>amp-state</code> via JSON
+                                string is not supported in JSX:
+                                <pre>{`<amp-state id="myState">
+  <script type="application/json">
+    {
+      "message": "Hello World"
+    }
+  </script>
+</amp-state>`}</pre>
+                                Instead you need to use{" "}
+                                <code>dangerouslySetInnerHTML</code> to
+                                initialize the string. can use the{" "}
+                                <code>/components/amp/AmpState.js</code>{" "}
+                                component to see how it works. The same approach
+                                works for <code>amp-access</code> and{" "}
+                                <code>amp-consent</code> as well
+                            </li>
+                        </ol>
+                        Demo:
+                    </p>
+
+                    <AmpState id="myState">
+                        {{
+                            message: "Hello World",
+                        }}
+                    </AmpState>
+                    <button
+                        on="tap:AMP.setState({
+           greeting: myState.message
+         })"
+                    >
+                        Click
+                    </button>
+                    <span data-amp-bind-text="greeting" />
+                </section>
+
+                <section>
+                    <h3>amp-list & amp-mustache</h3>
+                    <p>
+                        Mustache templates conflict with JSX and it's template
+                        literals need to be escaped. A simple approach is to
+                        escape them via back ticks:{" "}
+                        <code>
+                            src=&#123;`&#123;&#123;imageUrl&#125;&#125;`&#125;
+                        </code>
+                        .
+                    </p>
+
+                    <AmpIncludeAmpList />
+                    <amp-list
+                        src="https://amp.dev/documentation/examples/api/photo-stream"
+                        layout="fixed-height"
+                        height="64"
+                        binding="no"
+                    >
+                        <template type="amp-mustache">
+                            <amp-img
+                                src={`{{imageUrl}}`}
+                                width="64"
+                                height="64"
+                                alt="demo image"
                             />
-                        </amp-video>
-                    </amp-story-grid-layer>
-                </amp-story-page>
+                        </template>
+                    </amp-list>
+                </section>
 
-                {/* <!-- Pre-defined entry animations make it possible to create dynamic pages without videos. The length and initial delay can be customized using the `animate-in-duration` and `animate-in-delay` properties. The [animations sample](/documentation/examples/visual-effects/amp_story_animations/) shows all available animantions in action. --> */}
-                <amp-story-page id="animation-demo">
-                    <amp-story-grid-layer template="fill">
-                        <amp-img
-                            src="https://amp.dev/static/samples/img/story_dog4.jpg"
-                            animate-in="fly-in-top"
-                            width="720"
-                            height="1280"
-                            layout="responsive"
-                        />
-                    </amp-story-grid-layer>
-                    <amp-story-grid-layer template="thirds">
-                        <h2
-                            animate-in="fly-in-bottom"
-                            grid-area="lower-third"
-                            animate-in-delay="0.4s"
-                        >
-                            Best walk ever!
-                        </h2>
-                    </amp-story-grid-layer>
-                </amp-story-page>
+                <section>
+                    <h3>amp-script</h3>
+                    <p>
+                        Checkout the{" "}
+                        <a href="https://amp.dev/documentation/components/amp-script/">
+                            amp-script
+                        </a>{" "}
+                        helper here: <code>components/amp/AmpScript.js</code>{" "}
+                        for embedding custom JavaScript.
+                    </p>
 
-                {/* <!-- Stories can use predefined layouts to style the page. Here we're using the `thirds` template. For an overview about the available layouts take a look at the [layouts sample](/documentation/examples/style-layout/amp_story_layouts/). --> */}
-                <amp-story-page id="layout-demo">
-                    <amp-story-grid-layer template="thirds">
-                        <amp-img
-                            grid-area="upper-third"
-                            src="https://amp.dev/static/samples/img/story_thirds_1.jpg"
-                            width="560"
-                            height="420"
-                            layout="responsive"
-                        />
-                        <amp-img
-                            grid-area="middle-third"
-                            src="https://amp.dev/static/samples/img/story_thirds_2.jpg"
-                            width="560"
-                            height="420"
-                            layout="responsive"
-                        />
-                        <amp-img
-                            grid-area="lower-third"
-                            src="https://amp.dev/static/samples/img/story_thirds_3.jpg"
-                            width="560"
-                            height="420"
-                            layout="responsive"
-                        />
-                    </amp-story-grid-layer>
-                </amp-story-page>
+                    <AmpScript
+                        layout="container"
+                        src={`${props.host}/static/amp-script/hello.js`}
+                    >
+                        <button>Hello amp-script!</button>
+                    </AmpScript>
 
-                {/* <!-- A "bookend" panel containing links to other resources will appear on the last page of your story if you include an `amp-story-bookend` that references a [bookend JSON config](/static/samples/json/bookend.json). --> */}
-                <amp-story-bookend
-                    src="https://amp.dev/static/samples/json/bookend.json"
-                    layout="nodisplay"
-                />
-            </amp-story>
-        </>
-    )
+                    <p>
+                        The helper also supports embedding inline scripts. Good
+                        to know: Next.js uses{" "}
+                        <a href="https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer">
+                            AMP Optimizer
+                        </a>{" "}
+                        under the hood, which automatically adds the needed
+                        script hashes for{" "}
+                        <a href="https://amp.dev/documentation/components/amp-script/#load-javascript-from-a-local-element">
+                            inline amp-scripts
+                        </a>
+                        .
+                    </p>
+                    <AmpScript
+                        id="hello-world"
+                        layout="fixed-height"
+                        height="64"
+                        script="
+              const btn = document.querySelector('button');
+              btn.addEventListener('click', () => {
+                document.body.textContent = 'Hello World!'
+              })"
+                    >
+                        <button>Hello amp-script!</button>
+                    </AmpScript>
+                </section>
+            </main>
+        </Layout>
+        <style jsx>{`
+            code,
+            pre {
+                font-family: "SFMono-Regular", Consolas, "Liberation Mono",
+                    Menlo, Courier, monospace;
+                background: #f2f2f2;
+                padding: 2px 3px;
+                font-size: 13px;
+            }
+            main {
+                margin: 0 auto;
+                max-width: 800px;
+            }
+            main > * + * {
+                margin: 4rem 0.5rem;
+            }
+            .title {
+                text-align: center;
+                padding-top: 4rem;
+            }
+            .hero {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-gap: 1rem;
+            }
+            .hero > a {
+                display: block;
+                padding: 1rem;
+                text-align: left;
+                text-decoration: none;
+                background-color: #005af0;
+            }
+            .hero h3 {
+                margin: 0;
+                color: #067df7;
+                color: #fff;
+            }
+            .hero p {
+                margin: 0;
+                color: #fff;
+            }
+        `}</style>
+    </>
+)
+
+// amp-script requires absolute URLs, so we create a property `host` which we can use to calculate the script URL.
+export async function getServerSideProps({ req }) {
+    // WARNING: This is a generally unsafe application unless you're deploying to a managed platform like Vercel.
+    // Be sure your load balancer is configured to not allow spoofed host headers.
+    return { props: { host: `${getProtocol(req)}://${req.headers.host}` } }
 }
+
+function getProtocol(req) {
+    if (req.connection.encrypted) {
+        return "https"
+    }
+    const forwardedProto = req.headers["x-forwarded-proto"]
+    if (forwardedProto) {
+        return forwardedProto.split(/\s*,\s*/)[0]
+    }
+    return "http"
+}
+
+export default Home

@@ -1,86 +1,20 @@
 {
-    "short_name": "Klemmer",
-    "name": "Klemmer.info",
-    "lang": "en",
-    "description": "Klemmer.info Blog",
-    "start_url": "https://klemmer.info",
-    "background_color": "#4f46e5",
-    "theme_color": "#fbbf24",
-    "dir": "ltr",
-    "display": "standalone",
-    "orientation": "any",
+    "short_name": "My page",
+    "name": "My fantastic page",
     "icons": [
         {
-            "src": "/icons/icon-512x512.png",
-            "type": "image/png",
-            "sizes": "512x512",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "/icons/android-icon-192x192.jpg",
+            "src": "/static/images/icons-192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/icons/apple-icon-180x180.jpg",
+            "src": "/static/images/icons-512.png",
             "type": "image/png",
-            "sizes": "180x180"
-        },
-        {
-            "src": "/icons/apple-icon-152x152.jpg",
-            "type": "image/png",
-            "sizes": "152x152"
-        },
-        {
-            "src": "/icons/apple-icon-144x144.jpg",
-            "type": "image/png",
-            "sizes": "144x144"
-        },
-        {
-            "src": "/icons/apple-icon-120x120.jpg",
-            "type": "image/png",
-            "sizes": "120x120"
-        },
-        {
-            "src": "/icons/apple-icon-114x114.jpg",
-            "type": "image/png",
-            "sizes": "114x114"
-        },
-        {
-            "src": "/icons/favicon-96x96.jpg",
-            "type": "image/png",
-            "sizes": "96x96"
-        },
-        {
-            "src": "/icons/apple-icon-76x76.jpg",
-            "type": "image/png",
-            "sizes": "76x76"
-        },
-        {
-            "src": "/icons/apple-icon-72x72.jpg",
-            "type": "image/png",
-            "sizes": "72x72"
-        },
-        {
-            "src": "/icons/apple-icon-60x60.jpg",
-            "type": "image/png",
-            "sizes": "60x60"
-        },
-        {
-            "src": "/icons/apple-icon-57x57.jpg",
-            "type": "image/png",
-            "sizes": "57x57"
-        },
-        {
-            "src": "/icons/favicon-32x32.jpg",
-            "type": "image/png",
-            "sizes": "32x32"
-        },
-        {
-            "src": "/icons/favicon-16x16.jpg",
-            "type": "image/png",
-            "sizes": "16x16"
+            "sizes": "512x512"
         }
     ],
-    "prefer_related_applications": "false"
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#005af0",
+    "background_color": "#ffffff"
 }
