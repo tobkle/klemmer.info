@@ -234,7 +234,6 @@ const Home = (props) => (
             }
             .hero h3 {
                 margin: 0;
-                color: #067df7;
                 color: #fff;
             }
             .hero p {
