@@ -1,0 +1,15 @@
+name: post
+plural: post
+singular: post
+menu: true
+create: true
+read: true
+update: true
+delete: true
+fields:
+  - name: title
+    label: Title
+    widget: text
+    default: ""
+    placeholder: text
+    required: true
