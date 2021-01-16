@@ -31,3 +31,9 @@ fields:
     default: ""
     placeholder: Author
     required: true
+  - name: date
+    label: Date
+    widget: date
+    default: ""
+    placeholder: Date
+    required: false
