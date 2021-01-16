@@ -19,3 +19,9 @@ fields:
     default: ""
     placeholder: Content
     required: false
+  - name: published
+    label: Published
+    widget: boolean
+    default: "false"
+    placeholder: published
+    required: false
