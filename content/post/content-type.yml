@@ -25,3 +25,9 @@ fields:
     default: "false"
     placeholder: published
     required: false
+  - name: author
+    label: Author
+    widget: text
+    default: ""
+    placeholder: Author
+    required: true
