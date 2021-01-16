@@ -19,3 +19,9 @@ fields:
     default: ""
     placeholder: Slug
     required: true
+  - name: content
+    label: Content
+    widget: editor
+    default: ""
+    placeholder: Content
+    required: false
