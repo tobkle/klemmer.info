@@ -13,3 +13,9 @@ fields:
     default: ""
     placeholder: text
     required: true
+  - name: content
+    label: Content
+    widget: editor
+    default: ""
+    placeholder: Content
+    required: false
