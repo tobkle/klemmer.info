@@ -1,0 +1,12 @@
+name: content
+plural: Content Types
+singular: Content Type
+menu: true
+create: true
+read: true
+update: true
+delete: true
+folders:
+  - name: page
+    label: Pages
+    menu: true
