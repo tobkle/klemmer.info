@@ -1,0 +1,15 @@
+name: page
+plural: page
+singular: page
+menu: true
+create: true
+read: true
+update: true
+delete: true
+fields:
+  - name: slug
+    label: Slug
+    widget: slug
+    default: ""
+    placeholder: Slug
+    required: true
