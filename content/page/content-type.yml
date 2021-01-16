@@ -13,3 +13,9 @@ fields:
     default: ""
     placeholder: Slug
     required: true
+  - name: title
+    label: Title
+    widget: text
+    default: ""
+    placeholder: Slug
+    required: true
