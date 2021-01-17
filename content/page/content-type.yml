@@ -7,6 +7,12 @@ read: true
 update: true
 delete: true
 fields:
+  - name: date
+    label: Date
+    widget: date
+    default: ""
+    placeholder: Date
+    required: false
   - name: slug
     label: Slug
     widget: slug
