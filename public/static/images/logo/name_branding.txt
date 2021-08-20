@@ -1,0 +1,6 @@
+
+            Main text Font: Squada One
+            Slogan Text Font: Orbitron
+            COLOR RGBA: rgba(11, 92, 195, 1)
+            COLOR HEX: #0b5cc3
+            
