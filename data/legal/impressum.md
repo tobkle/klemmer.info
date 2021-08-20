@@ -11,7 +11,7 @@ date: 2021-08-20
 ## Angaben gemäß § 5 TMG
 
 Tobias Klemmer
-Application Development und Web Design Im Anger 9
+Im Anger 9
 97996 Niederstetten
 
 ## Kontakt
