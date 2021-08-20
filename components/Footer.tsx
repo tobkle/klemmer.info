@@ -20,9 +20,22 @@ export default function Footer() {
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
           <Link href="/">{siteMetadata.title}</Link>
-        </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+          <div>{` • `}</div>
           <Link href="https://klemmer.info">Applications</Link>
+        </div>
+
+        <div className="flex mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
+          <div>
+            <Link href="impressum">
+              <a>Imprint | Impressum</a>
+            </Link>
+          </div>
+          <div>{` • `}</div>
+          <div>
+            <Link href="datenschutz">
+              <a>Privacy | Datenschutzerklärung</a>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

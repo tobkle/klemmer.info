@@ -1,0 +1,134 @@
+{
+  "main": {
+    "id": "bfc88ccfbdc43447",
+    "type": "split",
+    "children": [
+      {
+        "id": "47b28e294afa32c2",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "data/blog/The_One_Thing.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "92cbc2ce40c0431b",
+    "type": "split",
+    "children": [
+      {
+        "id": "8484410c435dae10",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f8f3cc1b8601ea4d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b9e59b0a719e1548",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1084323c1bda7a59",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "10de2e04d84a84b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "593b1bcba57cc528",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "442a5428cd693929",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "data/blog/The_One_Thing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ece2bfa60b29dd79",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "data/blog/The_One_Thing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b59dedd507aade6f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ecce06670ada5635",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "data/blog/The_One_Thing.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "47b28e294afa32c2",
+  "lastOpenFiles": [
+    "data/blog/The_One_Thing.md"
+  ]
+}

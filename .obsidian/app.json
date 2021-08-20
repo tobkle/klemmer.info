@@ -1,0 +1,8 @@
+{
+  "spellcheck": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./attachments"
+}
