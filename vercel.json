@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/notes/",
+      "destination": "https://publish.obsidian.md/serve?url=klemmer.info/notes"
+    },
+    {
+      "source": "/notes/:path*",
+      "destination": "https://publish.obsidian.md/serve?url=klemmer.info/notes/:path*"
+    }
+  ]
+}
